@@ -1,0 +1,13 @@
+username,full_name,department,role,resource_type,resource_name,permissions
+alice,Alice Smith,Engineering,Developer,file,/home/alice/secret.txt,read;write
+alice,Alice Smith,Engineering,Developer,db,finance_db,read
+bob,Bob Johnson,IT,Sysadmin,server,prod-web-01,ssh
+bob,Bob Johnson,IT,Sysadmin,file,/etc/shadow,read
+carol,Carol White,Finance,Accountant,folder,/home/carol/docs,read;write;delete
+dave,Dave Brown,HR,Recruiter,file,/var/log/auth.log,read
+eve,Eve Black,Security,Analyst,db,security_audit,read;write
+frank,Frank Green,Engineering,DevOps,server,devops-ci,ssh;deploy
+grace,Grace Lee,Marketing,Manager,file,/marketing/campaigns.xlsx,read;write
+heidi,Heidi King,Support,Helpdesk,folder,/support/tickets,read;write
+ivan,Ivan Moore,IT,Network Engineer,server,network-core,ssh
+judy,Judy Clark,Legal,Lawyer,file,/legal/contracts.pdf,read

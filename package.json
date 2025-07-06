@@ -1,0 +1,53 @@
+{
+  "name": "permissionblast",
+  "version": "1.0.0",
+  "main": "app/main/dist/main.js",
+  "scripts": {
+    "build-main": "tsc --project app/main && copy app\\main\\preload.js app\\main\\dist\\preload.js",
+    "start": "npm run build-main && concurrently \"npm:react-start\" \"npm:electron-dev\"",
+    "react-start": "cd app/renderer && npm start",
+    "electron-dev": "wait-on tcp:3000 && electron .",
+    "build": "cd app/renderer && npm run build",
+    "cli": "ts-node cli/index.ts",
+    "build-cli": "tsc -p cli/tsconfig.json",
+    "test": "jest",
+    "test:ui": "cd app/renderer && npm test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^30.0.0",
+    "concurrently": "^9.2.0",
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12",
+    "jest": "^30.0.4",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3",
+    "wait-on": "^8.0.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/app/shared",
+      "<rootDir>/cli"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "testMatch": [
+      "**/*.test.ts",
+      "**/*.test.js"
+    ]
+  },
+  "dependencies": {
+    "web-vitals": "^5.0.3"
+  }
+}
